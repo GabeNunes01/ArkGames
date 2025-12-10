@@ -73,3 +73,15 @@
 .header-red-light { background: #ff6b6b; }
 .header-red-medium { background: #e03b3b; }
 .header-red-dark { background: #8b0000; }
+
+/* Estilos de demonstração para a página de teste (escopo: .header-test) */
+.header-test {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #111;
+  color: #eee;
+}
+
+.header-test main {
+  padding: 40px;
+}
