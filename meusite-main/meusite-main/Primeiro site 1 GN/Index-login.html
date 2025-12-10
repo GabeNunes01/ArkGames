@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARK Games — Login</title>
+  <link rel="stylesheet" href="style-login.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="Index2-page.html">ARK</a><br><small>Games</small>
+  </div>
+  <nav>
+    <a href="Index2-page.html">Início</a>
+    <a href="Index-loja.HTML">Loja</a>
+    <a href="Index-serviços.html">Serviço</a>
+    <a href="Index-dowload.html">Download</a>
+  </nav>
+</header>
+
+<main class="login-container">
+  <div class="login-box">
+    <div class="login-header">
+      <h1>ARK Games</h1>
+      <p>Bem-vindo de volta!</p>
+    </div>
+
+    <form class="login-form" id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Sua senha segura" required>
+      </div>
+
+      <div class="form-options">
+        <label class="remember-me">
+          <input type="checkbox" name="remember">
+          Lembrar-me
+        </label>
+        <a href="#" class="forgot-password">Esqueceu a senha?</a>
+      </div>
+
+      <button type="submit" class="btn-login">Entrar</button>
+    </form>
+
+    <div class="social-login">
+      <p>Ou continue com:</p>
+      <div class="social-buttons">
+        <a href="#" class="social-btn google" title="Google">Google</a>
+        <a href="#" class="social-btn discord" title="Discord">Discord</a>
+        <a href="#" class="social-btn steam" title="Steam">Steam</a>
+      </div>
+    </div>
+
+    <div class="signup-link">
+      <p>Não tem conta? <a href="#" class="link-signup">Cadastre-se aqui</a></p>
+    </div>
+  </div>
+
+  <div class="login-benefits">
+    <h2>Por que fazer login?</h2>
+    
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <div class="benefit-icon">🎮</div>
+        <h3>Acesso à Biblioteca</h3>
+        <p>Acesse todos os seus jogos comprados em qualquer dispositivo</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">🏆</div>
+        <h3>Conquistas</h3>
+        <p>Ganhe troféus e desbloqueie conquistas enquanto joga</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">👥</div>
+        <h3>Comunidade</h3>
+        <p>Conecte-se com amigos e participe de torneios</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">💾</div>
+        <h3>Sincronização</h3>
+        <p>Sincronize seu progresso na nuvem automaticamente</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">🎁</div>
+        <h3>Bônus Exclusivos</h3>
+        <p>Receba recompensas e conteúdo exclusivo para membros</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon">⚡</div>
+        <h3>Performance</h3>
+        <p>Melhor velocidade e prioridade nos servidores</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="security-notice">
+  <div class="security-content">
+    <h3>🔐 Sua segurança é importante</h3>
+    <p>Usamos criptografia de ponta a ponta e autenticação de dois fatores para proteger sua conta. Seus dados nunca são compartilhados com terceiros.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>ARK Games</h3>
+      <p>Plataforma de jogos online de qualidade superior.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="Index2-page.html">Início</a></li>
+        <li><a href="Index-loja.HTML">Loja</a></li>
+        <li><a href="Index-serviços.html">Serviço</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="mailto:contato@arkgames.com">contato@arkgames.com</a></li>
+        <li><a href="tel:+5511999999999">(51) 94002-8922</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Redes Sociais</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/share/1ASdHrWHWa/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/gabe_nunes0?igsh=NTEzeGFkcnJibXph">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@gabe_nunes0?_r=1&_t=ZS-91trWVN72LI">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 ARK Games. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    alert('Login iniciado com: ' + email);
+    // Aqui você conectaria ao backend
+  });
+</script>
+
+</body>
+</html>

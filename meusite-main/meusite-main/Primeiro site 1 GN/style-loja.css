@@ -1,3 +1,13 @@
+:root {
+  --bg-color: #1a1a1a;
+  --primary: #3300FF;
+  --primary-strong: #2400cc;
+  --muted: #BDBDBD;
+  --glass: rgba(0,0,0,0.55);
+  --glass-2: rgba(0,0,0,0.45);
+  --max-width: 1200px;
+}
+
 /* Reset e estilos globais */
 * {
   margin: 0;
@@ -10,113 +20,115 @@ html {
 }
 
 body {
-  background-image: url('ArK.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #1a1a1a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
-  /* Melhorias de qualidade */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: var(--bg-color);
+  background-image: url('ArK.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Cabeçalho */
 header {
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 8px 60px;
-  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: space-between;
+ 
+  padding: 18px 28px;
+  background: linear-gradient(180deg, var(--glass), var(--glass-2));
+  border-bottom: 2px solid rgba(0,0,0,0.8);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  
+  box-shadow: 0 2px 10px rgba(0,0,0,0.45);
 }
 
+/* Logo */
 .logo {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 28px;
   color: white;
   cursor: pointer;
   transition: 0.3s;
 }
-
-.logo:hover {
-  color: #3300FF;
+.logo a {
+  color: white;
+  text-decoration: none;
+  
+  transition: color .2s ease;
 }
-
+.logo a:hover {
+  color: #3300FF
+}
 .logo small {
+  
   font-weight: normal;
   font-size: 12px;
   color: #bbb;
   display: block;
+  
 }
-
-/* Menu */
+/* Navegação */
 nav {
   display: flex;
-  gap: 40px;
+  gap: 18px;
   align-items: center;
-  flex: 1;
-  margin: 0 40px;
+  flex-wrap: wrap;
 }
-
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
-  transition: 0.3s ease;
-  position: relative;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: color .18s, background .18s, transform .12s;
 }
-
-nav a:hover,
+nav a:hover {
+  color: var(--primary);
+}
 nav a.active {
-  color: #3300FF;
+  color: var(--primary);
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #3300FF;
-  transition: width 0.3s ease;
+/* Focus acessível */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(51,0,255,0.25);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
-nav a:hover::after,
-nav a.active::after {
-  width: 100%;
+/* Remover sublinhado de cabeçalhos */
+h1,h2,h3,h4,h5,h6 {
+  text-decoration: none;
 }
 
+/* Botão primário */
 .btn-primary {
-  background-color: #3300FF;
-  color: white !important;
+  background: linear-gradient(90deg, var(--primary), #7700FF);
+  color: #fff !important;
   padding: 12px 28px;
   border-radius: 25px;
   text-decoration: none !important;
-  font-weight: bold;
+  font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform .18s ease, box-shadow .18s ease;
   display: inline-block;
 }
-
 .btn-primary:hover {
-  background-color: #2400cc;
-  box-shadow: 0 0 20px rgba(51, 0, 255, 0.5);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(51, 0, 255, 0.22);
 }
 
 /* Header da Loja */
@@ -124,7 +136,7 @@ nav a.active::after {
   text-align: center;
   padding: 60px 40px;
   background: linear-gradient(135deg, rgba(51, 0, 255, 0.15), rgba(0, 0, 0, 0.7));
-  border-bottom: 2px solid #3300FF;
+  border-bottom: 2px solid var(--primary);
   margin-bottom: 40px;
   backdrop-filter: blur(10px);
 }
@@ -132,7 +144,7 @@ nav a.active::after {
 .loja-header h1 {
   font-size: 48px;
   margin-bottom: 10px;
-  background: linear-gradient(135deg, #3300FF, #7700FF);
+  background: linear-gradient(135deg, var(--primary), #7700FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -156,13 +168,13 @@ nav a.active::after {
 .filtros input,
 .filtros select {
   padding: 12px 20px;
-  border: 2px solid #3300FF;
+  border: 2px solid var(--primary);
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .3s;
   backdrop-filter: blur(10px);
 }
 
@@ -178,7 +190,7 @@ nav a.active::after {
 }
 
 .filtros select option {
-  background-color: #1a1a1a;
+  background-color: var(--bg-color);
   color: white;
 }
 
@@ -199,7 +211,7 @@ nav a.active::after {
   border: 2px solid rgba(51, 0, 255, 0.4);
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
@@ -208,7 +220,7 @@ nav a.active::after {
 
 .produto:hover {
   transform: translateY(-15px);
-  border-color: #3300FF;
+  border-color: var(--primary);
   box-shadow: 0 15px 50px rgba(51, 0, 255, 0.5);
 }
 
@@ -216,7 +228,7 @@ nav a.active::after {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
   border-radius: 13px 13px 0 0;
 }
 
@@ -233,7 +245,7 @@ nav a.active::after {
 
 .produto .categoria {
   padding: 0 20px;
-  color: #3300FF;
+  color: var(--primary);
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -251,60 +263,63 @@ nav a.active::after {
   padding: 10px 20px;
   font-size: 20px;
   font-weight: bold;
-  color: #3300FF;
+  color: var(--primary);
 }
 
 .btn-comprar {
   margin: 10px 20px 20px;
   padding: 12px;
-  background: linear-gradient(135deg, #3300FF, #5500FF);
+  background: linear-gradient(135deg, var(--primary), #5500FF);
   color: white;
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .btn-comprar:hover {
-  background: linear-gradient(135deg, #2400cc, #4400dd);
+  background: linear-gradient(135deg, var(--primary-strong), #4400dd);
   box-shadow: 0 0 20px rgba(51, 0, 255, 0.6);
   transform: scale(1.05);
 }
 
 /* Rodapé */
 footer {
-  background-color: rgba(0, 0, 0, 0.85);
-  color: white;
-  padding: 20px 60px;
-  border-top: 2px solid #3300FF;
-  margin-top: 80px;
+  width: 100%;
+  background: rgba(0,0,0,0.82);
+  padding: 20px 28px;
+  border-top: 2px solid var(--primary);
+  margin-top: 60px;
 }
 
 .footer-content {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: flex;
+  gap: 30px;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
+  padding: 8px 0;
 }
 
 .footer-section {
   flex: 1;
+  min-width: 160px;
 }
 
 .footer-section h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #3300FF;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .footer-section h4 {
+  color: #fff;
+  margin-bottom: 8px;
   font-size: 14px;
-  margin-bottom: 10px;
-  color: white;
   font-weight: 600;
 }
 
@@ -319,43 +334,27 @@ footer {
 }
 
 .footer-section ul li {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .footer-section a {
   color: #ccc;
   text-decoration: none;
   font-size: 13px;
-  transition: 0.3s;
-  position: relative;
+  transition: color .2s ease;
 }
 
 .footer-section a:hover {
-  color: #3300FF;
-}
-
-.footer-section a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #3300FF;
-  transition: width 0.3s ease;
-}
-
-.footer-section a:hover::after {
-  width: 100%;
+  color: var(--primary);
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 15px;
-  border-top: 1px solid rgba(51, 0, 255, 0.3);
   color: #999;
   font-size: 12px;
-  margin-top: 20px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(51,0,255,0.12);
 }
 
 /* Responsividade */
@@ -363,7 +362,6 @@ footer {
   header {
     padding: 15px 40px;
   }
-  
   .produtos {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
@@ -375,49 +373,38 @@ footer {
     gap: 15px;
     padding: 15px 20px;
   }
-  
   nav {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    margin: 0;
   }
-  
   nav a {
     width: 100%;
     text-align: center;
   }
-  
   .loja-header {
     padding: 40px 20px;
   }
-  
   .loja-header h1 {
     font-size: 32px;
   }
-  
   .filtros {
     margin: 20px;
     flex-direction: column;
   }
-  
   .filtros input,
   .filtros select {
     width: 100%;
   }
-  
   .produtos {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
   }
-  
   .footer-content {
     flex-direction: column;
-    gap: 25px;
-  }
-  
-  .footer-section {
+    gap: 18px;
+    align-items: center;
     text-align: center;
   }
 }
@@ -426,29 +413,35 @@ footer {
   header {
     padding: 10px 15px;
   }
-  
   nav {
     gap: 8px;
   }
-  
   nav a {
     font-size: 12px;
     padding: 8px 12px;
   }
-  
+  .loja-header {
+    padding: 30px 15px;
+  }
   .loja-header h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
-  
-  .produtos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .produto h3 {
+  .loja-header p {
     font-size: 14px;
   }
-  
-  .produto .preco {
-    font-size: 16px;
+  .filtros {
+    margin: 15px;
+    gap: 10px;
+  }
+  .produtos {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  .produto img {
+    height: 200px;
+  }
+  .footer-content {
+    gap: 15px;
   }
 }
