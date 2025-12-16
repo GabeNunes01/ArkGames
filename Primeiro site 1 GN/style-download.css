@@ -1,0 +1,288 @@
+/* Variaveis de tema do style-page.css */
+:root {
+  --bg-color: #1a1a1a;
+  --primary: #3300FF;
+  --primary-strong: #2400cc;
+  --muted: #BDBDBD;
+  --glass: rgba(0,0,0,0.55);
+  --glass-2: rgba(0,0,0,0.45);
+  --max-width: 1200px;
+}
+
+/* Estilos gerais e reset */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  background-image: url('ArK.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo small {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: color .18s, background .18s, transform .12s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), #7700FF);
+  color: #fff !important;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none !important;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(51, 0, 255, 0.22);
+}
+
+/* Main Content */
+.download-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(51, 0, 255, 0.15), rgba(0, 0, 0, 0.7));
+  border-bottom: 2px solid var(--primary);
+  backdrop-filter: blur(10px);
+}
+
+.download-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.download-header p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.download-main, .download-mobile {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.download-main h2, .download-mobile h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.download-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.download-card {
+  background: linear-gradient(135deg, rgba(51, 0, 255, 0.15), rgba(0, 0, 0, 0.7));
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid rgba(51, 0, 255, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.download-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px rgba(51, 0, 255, 0.5);
+  border-color: var(--primary);
+}
+
+.download-card h3 {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.btn-download {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), #5500FF);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-download:hover {
+  background: linear-gradient(135deg, var(--primary-strong), #4400dd);
+  box-shadow: 0 0 20px rgba(51, 0, 255, 0.6);
+  text-decoration: none;
+}
+
+.mobile-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.mobile-card img {
+  height: 60px;
+  transition: transform 0.3s;
+}
+
+.mobile-card img:hover {
+  transform: scale(1.05);
+}
+
+/* FAQ Section */
+.faq {
+  padding: 3rem 1rem;
+  max-width: 800px;
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.faq details {
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.faq summary {
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.faq p {
+  margin-top: 1rem;
+  color: #d1d1d1;
+}
+
+/* Footer (reutilizado de outros estilos para consistência) */
+footer {
+  background-color: #1f1f1f;
+  color: #a0a0a0;
+  padding: 2rem 0 1rem;
+  border-top: 2px solid var(--primary);
+  background: rgba(0,0,0,0.82);
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 160px;
+}
+
+.footer-section h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.footer-section h4 {
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color .2s ease;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(51,0,255,0.12);
+  color: #999;
+  font-size: 12px;
+}
